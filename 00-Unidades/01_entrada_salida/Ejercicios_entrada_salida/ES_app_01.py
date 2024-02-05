@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Rocio
+apellido: Pacheco
 ---
 Ejercicio: entrada_salida_01
 ---
@@ -30,7 +30,7 @@ class App(customtkinter.CTk):
 
 
 if __name__ == "__main__":
-    app = App()df
+    app = App()
     app.geometry("300x300")
     app.mainloop()
     
