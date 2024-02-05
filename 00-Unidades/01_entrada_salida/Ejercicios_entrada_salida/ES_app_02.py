@@ -27,7 +27,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        mensaje=prompt("ingresar","Nombre y Apellido")
+        alert("Bienvenido",mensaje)
         
         
     
