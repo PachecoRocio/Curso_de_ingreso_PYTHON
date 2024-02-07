@@ -46,6 +46,7 @@ class App(customtkinter.CTk):
 
         #funciona igual sin los numeros
         #mensaje = f"Usted se llama {nombre} y tiene {edad} años"
+
         mensaje = "Usted se llama {0} y tiene {1} años".format(nombre, edad)
 
         alert ("Bienvenido", mensaje)

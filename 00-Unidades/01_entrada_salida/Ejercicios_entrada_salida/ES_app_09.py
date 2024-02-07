@@ -5,14 +5,15 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Rocio Ayelen
+apellido: Pacheco
 ---
 Ejercicio: entrada_salida_09
 ---
 Enunciado:
 Al presionar el botón 'Calcular', se deberá obtener el valor contenido en la caja de texto (txtSueldo), 
-transformarlo a número y mostrar el importe de sueldo actualizado con el incremento del 15% utilizando el Dialog Alert.
+transformarlo a número y mostrar el importe de sueldo actualizado con el incremento del 15% 
+utilizando el Dialog Alert.
 '''
 
 class App(customtkinter.CTk):
@@ -31,10 +32,12 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_mostrar_on_click(self):
-        pass
-        
+        sueldo = int( self.txt_sueldo.get())
+
+        incremento = sueldo *  0.15
+
+        alert ("Sueldo actualizado", f"El nuevo sueldo con un incremento del 15% es: {incremento}")
     
 if __name__ == "__main__":
     app = App()
