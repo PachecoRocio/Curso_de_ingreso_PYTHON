@@ -5,14 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Rocio Ayelen
+apellido: Pacheco
 ---
 Ejercicio: if_07
 ---
 Enunciado:
 Los argentinos nativos y por opción desde los dieciséis (16) años y los argentinos
-naturalizados desde los dieciocho (18) años están habilitados a votar. 
+naturalizado desde los dieciocho (18) años están habilitados a votar. 
 Al presionar el botón 'Mostrar', se deberá informar (utilizando el Dialog Alert) 
 si es o no posible que la persona concurra a votar en base a la información 
 suministrada.
@@ -40,12 +40,19 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_mostrar_on_click(self):
-        pass
+        edad = int(self.txt_edad.get())
+        tipo = self.combobox_tipo.get()
+
+        if edad >= 16 and tipo == "NATIVO":
+            alert ("", "Puede votar opcionalmente")
+
+        elif edad >= 18 and tipo == "NATURALIZADO":
+            alert("","Esta habilitado para votar")
+
+        else:
+            alert("", "No esta habilitado para votar")
         
-        
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
