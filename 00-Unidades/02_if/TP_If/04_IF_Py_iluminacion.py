@@ -5,18 +5,18 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Rocio Ayelen
+apellido: Pacheco
 ---
 TP: IF_Iluminacion
 ---
 Enunciado:
 Todas las lámparas están  al mismo precio de $800 pesos final.
-		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
-		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
-		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
-		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
-		E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
+	A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
+	B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
+	C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
+	D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
+	E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
 '''
 
 class App(customtkinter.CTk):
@@ -43,9 +43,43 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cant = int (self.combobox_cantidad.get())
+
+        sub_tot= 800 * cant
+
+        if cant >= 6:
+            descu = 50
+        elif cant == 5:
+            if marca =="ArgentinaLuz":
+                descu = 40             
+            else:
+                descu =  30             
+        elif cant == 4:
+            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                descu = 25             
+            else:
+                descu = 20              
+        elif cant == 3:
+            if marca == "ArgentinaLuz":
+                descu = 15               
+            elif  marca == "FelipeLamparas":
+                descu = 10
+            else:
+                descu = 5
+        else: 
+            descu = 0
         
-    
+        total = (sub_tot * descu) / 100 
+
+        if total >= 4000:
+            descu_add = 5
+        else: 
+            descu_add = 0
+
+        importe_final = total (total * descu_add / 100)
+        alert ("Total", f"El importe final con descuento es de ${importe_final}")
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

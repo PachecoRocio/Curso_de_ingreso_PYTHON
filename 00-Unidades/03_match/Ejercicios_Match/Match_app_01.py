@@ -4,11 +4,9 @@ from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
-
 '''
-
-nombre:
-apellido:
+nombre: Rocio Ayelen
+apellido: Pacheco
 ---
 Ejercicio: Match_01
 ---
@@ -41,11 +39,21 @@ class App(customtkinter.CTk):
         self.btn_informar = customtkinter.CTkButton(master=self, text="Informar", command=self.btn_informar_on_click)
         self.btn_informar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
         
-    
     def btn_informar_on_click(self):
-        pass
-    
-    
+        mes = self.combobox_mes.get()
+
+        match mes:
+            case "Enero":
+                print ("Que comiences bien el año!!!")
+            case "Marzo":
+                print ("A clases!!")
+            case "Julio":
+                print ("Se vienen las vacaciones!!")
+            case "Diciembre":
+                print ("Felices fiestas")
+            case _:
+                pass
+            
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

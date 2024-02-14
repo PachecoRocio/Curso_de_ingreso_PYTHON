@@ -46,10 +46,8 @@ class App(customtkinter.CTk):
 
         if edad >= 16 and tipo == "NATIVO":
             alert ("", "Puede votar opcionalmente")
-
         elif edad >= 18 and tipo == "NATURALIZADO":
             alert("","Esta habilitado para votar")
-
         else:
             alert("", "No esta habilitado para votar")
         

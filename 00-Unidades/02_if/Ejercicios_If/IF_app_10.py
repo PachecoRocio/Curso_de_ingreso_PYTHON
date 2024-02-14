@@ -7,8 +7,8 @@ import random
 
 
 '''
-nombre:
-apellido:
+nombre: Rocio Ayelen
+apellido: Pacheco
 ---
 Ejercicio: if_10
 ---
@@ -30,7 +30,6 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_mostrar_on_click(self):
         nota = random.randint(0, 10)
             
@@ -40,9 +39,6 @@ class App(customtkinter.CTk):
             alert ("", f"Aprobado, la nota es {nota}")
         else:
             alert ("", f"Desaprobado, la nota es {nota}")
-        
-        
-            
 
 if __name__ == "__main__":
     app = App()
