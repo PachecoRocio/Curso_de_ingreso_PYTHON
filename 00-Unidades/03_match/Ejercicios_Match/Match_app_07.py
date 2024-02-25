@@ -34,9 +34,9 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-         destino = self.combobox_destino.get()
+        destino = self.combobox_destino.get()
          
-         match destino:
+        match destino:
             case "Bariloche":
                 punto="Oeste"
             case "Mar del plata":
@@ -46,7 +46,8 @@ class App(customtkinter.CTk):
             case "uUhuaia":
                 punto="Sur"
     
-    
+        alert("", f"Este lugar esta por el {punto}")
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

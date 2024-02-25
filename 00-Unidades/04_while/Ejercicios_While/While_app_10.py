@@ -37,8 +37,29 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        numero = int (prompt("","Ingrese un número"))
+        cont_negativo = 0
+        cont_positivo = 0
+        acu_positivo = 0
+        acu_negativo = 0
 
+        while True:
+            numero = int (prompt("","Ingrese un número"))
+
+            if numero == None:
+                break
+            if numero > 0:
+                acu_positivo += numero
+                cont_positivo += 1
+            elif numero < 0:
+                acu_negativo += numero
+                cont_negativo += 1
+            elif numero == 0:
+                cont_cero += 1
+
+            diferencia = cont_negativo - cont_positivo
+
+        alert("",f"")
     
 if __name__ == "__main__":
     app = App()
