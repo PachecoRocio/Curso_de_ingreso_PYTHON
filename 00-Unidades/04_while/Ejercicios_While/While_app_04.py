@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Rocio Ayelen
+apellido:Pacheco
 ---
 Ejercicio: while_04
 ---

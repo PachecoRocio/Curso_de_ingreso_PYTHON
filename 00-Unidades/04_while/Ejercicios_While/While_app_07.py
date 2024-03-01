@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Rocio Ayelen
+apellido:Pacheco
 ---
 Ejercicio: while_07
 ---
@@ -35,24 +35,26 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, padx=20, pady=20, columnspan=2, sticky="nsew")
 
 
-    def btn_comenzar_ingreso_on_click(self):
-        num = int(prompt("","Ingrese un numero"))
+    def btn_comenzar_ingreso_on_click(self): 
+       
         contador = 0
         suma = 0
 
         while True:
-            num = int(prompt("","Ingrese un numero"))
+            num = prompt("","Ingrese un numero")
             if(num == None):
                 break
-            suma = suma + num
-            contador += 1
+            else:
+                suma = suma + num
+                contador += 1
 
         promedio = suma / contador
+
         self.txt_promedio.delete(0, 10)
         self.txt_suma_acumulada.delete(0, 10)
-        self.txt_promedio.insert(0, str(promedio))
-        self.txt_suma_acumulada.insert(0, str(suma))
-
+        self.txt_promedio.insert(0, int(promedio))
+        self.txt_suma_acumulada.insert(0, int(suma))
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

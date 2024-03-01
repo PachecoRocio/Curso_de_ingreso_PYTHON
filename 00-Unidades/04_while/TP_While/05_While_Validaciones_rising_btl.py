@@ -11,8 +11,8 @@ apellido:
 TP: While_validaciones_rising_btl
 ---
 Enunciado:
-Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
-por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
+Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada 
+e ingresada por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
 
 Los datos requeridos son los siguientes:
     Apellido
@@ -55,7 +55,17 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        
+
+        while True:
+            apellido = self.txt_apellido.get()
+            edad = int  (self.txt_edad.get())
+            civil = self.combobox_tipo
+            legajo = int(self.txt_legajo.get())
+
+           
+
+
 
 
 if __name__ == "__main__":

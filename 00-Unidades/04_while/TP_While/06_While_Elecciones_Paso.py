@@ -35,7 +35,15 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        candidato = prompt("", "Ingrese nombre del candidato")
+        edad = int(prompt("","Edad del candidato"))
+        cantidad = int(prompt("","Cantidad de votos"))
+
+        while True:
+            candidato = prompt("", "Ingrese nombre del candidato")
+            edad = int(prompt("","Edad del candidato"))
+            cantidad = int(prompt("","Cantidad de votos"))
+            
 
 
 if __name__ == "__main__":
