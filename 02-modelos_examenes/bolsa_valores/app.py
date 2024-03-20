@@ -80,8 +80,63 @@ class App(customtkinter.CTk):
         self.lista_cantidad_instrumento = [20, 35, 199, 100, 80]
     
     def btn_cargar_datos_on_click(self):
-        pass
+        seguir = True
+        cont_mep = 0
+        cont_bonos = 0
+        cont_cedear = 0
+        cont_cliente = 0
+        menos_operado = ""
+        mas_operado = ""
+        cont_no_cedear = 0
 
+        while seguir == True:
+            nombre = prompt("","Ingrese su nombre")
+
+            monto = int(prompt("","Ingrese monto en pesos"))
+            while monto < 10000:
+                monto = int(prompt("","Ingrese monto en pesos"))
+            
+            tipo= prompt("","Ingrese tipo de instrumento")
+            while tipo != "cedear" and tipo != "bonos" and tipo != "mep":
+                tipo= prompt("","Ingrese tipo de instrumento")
+            
+            cant = int(prompt("","Cantidad de instrumentos "))
+            while cant < 0:
+                cant = int(prompt("","Cantidad de instrumentos "))
+
+            match tipo:
+                case "cedear":
+                    cont_cedear += 1
+                case "bonos":
+                    cont_bonos +=1
+                case "mep":
+                    cont_mep += 1
+            
+            cont_cliente += 1
+
+            seguir = question("","desea seguir?")
+
+        if cont_bonos < cont_cedear:
+            menos_operado = "bonos"
+        elif cont_cedear < cont_mep:
+            menos_operado = "cedear"
+        else:
+            menos_operado = "mep"
+        
+        if cont_bonos > cont_cedear:
+            mas_operado = "bonos"
+        elif cont_cedear > cont_mep:
+            mas_operado = "cedear"
+        else:
+            mas_operado = "mep"
+        
+        cont_no_cedear = cont_cliente - cont_cedear
+
+        print(cont_cliente)
+        print(f"Tipo de instrumento que menos se operó {menos_operado}")
+        print(f"Tipo de instrumento que mas se operó {mas_operado}")
+        print(f"Cantidad de usuarios que no compraron CEDEAR {cont_no_cedear}")
+        
 
     def btn_mostrar_informe_1(self):
         pass
